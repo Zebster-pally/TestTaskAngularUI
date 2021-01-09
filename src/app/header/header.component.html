@@ -42,16 +42,36 @@
       </mat-menu>
     </div>
 
-    <div class="header__search" clickOutside (clickOutside)="opened = false">
+    <div class="header__search" clickOutside (clickOutside)="opened = false; openedDwopdown = false">
       <div class="search__wrapper" *ngIf="opened">
-        <input class="search__input" name="search" type="text" placeholder="Search"
-          (focus)="openedDwopdown = true" (blur)="openedDwopdown = false">
+        <input class="search__input" name="search" type="text" placeholder="Search" (focus)="openedDwopdown = true">
         <span class="close__input" (click)="opened = false"><img src="../../assets/close-search.png"></span>
         <button type="button" id="button__search">НАЙТИ</button>
       </div>
       <img src="../../assets/search.png" title="Search" alt="search-icon" (click)="opened = true"
         [ngClass]="{'hide' : opened, 'search__icon' : !opened}">
       <img class="add__icon" src="../../assets/add.png" title="Add" alt="add-icon">
+      <div class="search__dropdown" *ngIf="openedDwopdown">
+        <div class="dropdown__first__section">
+          <mat-checkbox class="checkbox__input" color="primary">мои</mat-checkbox>
+          <input type="text" placeholder="Автор" class="input__author">
+        </div>
+        <div class="dropdown__second__section">
+          <p class="sort">Сортировать по:</p>
+          <mat-form-field>
+            <mat-label>Дате</mat-label>
+            <mat-select disableRipple>
+              <mat-option value="1">1</mat-option>
+              <mat-option value="1">2</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="dropdown__third__section">
+          <mat-checkbox class="checkbox__input picker" color="primary">я участник</mat-checkbox>
+          <mat-checkbox class="checkbox__input picker" color="primary" [checked]="true">в заголовке</mat-checkbox>
+          <mat-checkbox class="checkbox__input picker" color="primary">строгий поиск</mat-checkbox>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -63,26 +83,3 @@
   </div>
 
 </header>
-
-
-<div class="search__dropdown" *ngIf="openedDwopdown">
-  <div class="dropdown__first__section">
-    <mat-checkbox class="checkbox__input" color="primary">мои</mat-checkbox>
-    <input type="text" placeholder="Автор" class="input__author">
-  </div>
-  <div class="dropdown__second__section">
-    <p class="sort">Сортировать по:</p>
-    <mat-form-field>
-      <mat-label>Дате</mat-label>
-      <mat-select disableRipple>
-        <mat-option value="1">1</mat-option>
-        <mat-option value="1">2</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
-  <div class="dropdown__third__section">
-    <mat-checkbox class="checkbox__input picker" color="primary">я участник</mat-checkbox>
-    <mat-checkbox class="checkbox__input picker" color="primary" [checked]="true">в заголовке</mat-checkbox>
-    <mat-checkbox class="checkbox__input picker" color="primary">строгий поиск</mat-checkbox>
-  </div>
-</div>

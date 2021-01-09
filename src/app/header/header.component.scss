@@ -195,11 +195,13 @@
 
 
 .search__dropdown {
+  position: absolute;
+  top: 53px;
+  left: 299px;
   width: 420px;
   height: 165px;
   filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.25));
   background-color: #ffffff;
-  margin: 0 0 0 299px;
   padding: 18px 22px;
 }
 
@@ -277,7 +279,7 @@
   }
 
   .search__dropdown {
-    margin: 0 0 0 207px;
+    left: 207px;
   }
 
   .search__input {
@@ -359,11 +361,10 @@
   }
 
   .search__dropdown {
-    position: relative;
-    top: -65px;
+    z-index: 99;
     width: 95%;
-    height: 173px;
-    margin: 0 auto;
+    left: 0;
+    margin: 0 2.5%;
   }
 
   .input__author {
