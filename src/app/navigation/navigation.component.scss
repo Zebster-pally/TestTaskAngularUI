@@ -1,0 +1,36 @@
+:host {
+  display: flex;
+}
+
+.navigation__button {
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 500;
+  font-family: "Roboto";
+  text-align: right;
+}
+
+.triangle {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 5px 0 5px;
+  border-color: #ffffff transparent transparent transparent;
+  margin-left: 8px;
+}
+
+@media screen and (max-width: 1024px) {
+  .navigation__button {
+    font-size: 14px;
+  }
+
+  .triangle {
+    margin-left: 2px;
+    border-width: 4px 3px 0 3px;
+  }
+
+  :host {
+    width: 500px;
+  }
+}

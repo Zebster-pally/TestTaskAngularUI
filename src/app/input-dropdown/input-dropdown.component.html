@@ -1,0 +1,19 @@
+<div class="dropdown__first__section">
+  <mat-checkbox class="checkbox__input" color="primary">мои</mat-checkbox>
+  <input type="text" placeholder="Автор" class="input__author">
+</div>
+<div class="dropdown__second__section">
+  <p class="sort">Сортировать по:</p>
+  <mat-form-field>
+    <mat-label>Дате</mat-label>
+    <mat-select disableRipple>
+      <mat-option value="1">1</mat-option>
+      <mat-option value="1">2</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div class="dropdown__third__section">
+  <mat-checkbox class="checkbox__input picker" color="primary">я участник</mat-checkbox>
+  <mat-checkbox class="checkbox__input picker" color="primary" [checked]="true">в заголовке</mat-checkbox>
+  <mat-checkbox class="checkbox__input picker" color="primary">строгий поиск</mat-checkbox>
+</div>

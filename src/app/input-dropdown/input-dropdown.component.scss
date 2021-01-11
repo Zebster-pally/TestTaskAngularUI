@@ -1,0 +1,70 @@
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown__first__section {
+  @include flexCenter();
+  justify-content: space-between;
+}
+
+.checkbox__input {
+  font-size: 12px;
+  line-height: 40px;
+  color: #212121;
+  font-weight: 400;
+  font-family: "Roboto";
+}
+
+.input__author {
+  width: 313px;
+  height: 37px;
+  border-radius: 2px;
+  background-color: #ffffff;
+  border: 1px solid #c4ced5;
+  text-indent: 10px;
+}
+
+.dropdown__second__section {
+  @include flexCenter();
+}
+
+.sort {
+  font-size: 12px;
+  line-height: 40px;
+  color: #212121;
+  font-weight: 400;
+  font-family: "Roboto";
+  margin-right: 25px;
+}
+
+.dropdown__third__section {
+  @include flexCenter();
+  padding-bottom: 5px;
+}
+
+.picker {
+  margin-right: 31px;
+}
+
+@media screen and (max-width: 768px) {
+  .input__author {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .input__author {
+    width: 280px;
+  }
+
+  .dropdown__third__section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+
+
+

@@ -1,0 +1,29 @@
+<button class="navigation__button" mat-button [matMenuTriggerFor]="menu">Ссылки <span class="triangle"></span></button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>Ссылка 1</button>
+  <button mat-menu-item>Ссылка 2</button>
+</mat-menu>
+<button class="navigation__button" mat-button>Контакты</button>
+<button class="navigation__button" mat-button [matMenuTriggerFor]="menu2">Теги <span class="triangle"></span></button>
+<mat-menu #menu2="matMenu">
+  <button mat-menu-item>Тег 1</button>
+  <button mat-menu-item>Тег 2</button>
+</mat-menu>
+<button class="navigation__button" mat-button [matMenuTriggerFor]="menu3">Просьбы <span
+    class="triangle"></span></button>
+<mat-menu #menu3="matMenu">
+  <button mat-menu-item>Просьба 1</button>
+  <button mat-menu-item>Просьба 2</button>
+</mat-menu>
+<button class="navigation__button" mat-button [matMenuTriggerFor]="menu4">Избранное <span
+    class="triangle"></span></button>
+<mat-menu #menu4="matMenu">
+  <button mat-menu-item>Избранное 1</button>
+  <button mat-menu-item>Избранное 2</button>
+</mat-menu>
+<button class="navigation__button" mat-button [matMenuTriggerFor]="menu5">Посещения <span
+    class="triangle"></span></button>
+<mat-menu #menu5="matMenu">
+  <button mat-menu-item>Посещения 1</button>
+  <button mat-menu-item>Посещения 2</button>
+</mat-menu>

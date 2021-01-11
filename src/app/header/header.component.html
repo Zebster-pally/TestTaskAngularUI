@@ -7,41 +7,9 @@
       <p class="logo__title">TILE.EXPERT</p>
       <img class="logo__arrow" src="../../assets/arrow.png" title="Arrow" alt="red-arrow">
     </div>
-
     <div [ngClass]="{'hide' : opened, 'header__navigation' : !opened}">
-      <button class="navigation__button" mat-button [matMenuTriggerFor]="menu">Ссылки <span
-          class="triangle"></span></button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item>Ссылка 1</button>
-        <button mat-menu-item>Ссылка 2</button>
-      </mat-menu>
-      <button class="navigation__button" mat-button>Контакты</button>
-      <button class="navigation__button" mat-button [matMenuTriggerFor]="menu2">Теги <span
-          class="triangle"></span></button>
-      <mat-menu #menu2="matMenu">
-        <button mat-menu-item>Тег 1</button>
-        <button mat-menu-item>Тег 2</button>
-      </mat-menu>
-      <button class="navigation__button" mat-button [matMenuTriggerFor]="menu3">Просьбы <span
-          class="triangle"></span></button>
-      <mat-menu #menu3="matMenu">
-        <button mat-menu-item>Просьба 1</button>
-        <button mat-menu-item>Просьба 2</button>
-      </mat-menu>
-      <button class="navigation__button" mat-button [matMenuTriggerFor]="menu4">Избранное <span
-          class="triangle"></span></button>
-      <mat-menu #menu4="matMenu">
-        <button mat-menu-item>Избранное 1</button>
-        <button mat-menu-item>Избранное 2</button>
-      </mat-menu>
-      <button class="navigation__button" mat-button [matMenuTriggerFor]="menu5">Посещения <span
-          class="triangle"></span></button>
-      <mat-menu #menu5="matMenu">
-        <button mat-menu-item>Посещения 1</button>
-        <button mat-menu-item>Посещения 2</button>
-      </mat-menu>
+      <app-navigation></app-navigation>
     </div>
-
     <div class="header__search" clickOutside (clickOutside)="opened = false; openedDwopdown = false">
       <div class="search__wrapper" *ngIf="opened">
         <input class="search__input" name="search" type="text" placeholder="Search" (focus)="openedDwopdown = true">
@@ -52,34 +20,9 @@
         [ngClass]="{'hide' : opened, 'search__icon' : !opened}">
       <img class="add__icon" src="../../assets/add.png" title="Add" alt="add-icon">
       <div class="search__dropdown" *ngIf="openedDwopdown">
-        <div class="dropdown__first__section">
-          <mat-checkbox class="checkbox__input" color="primary">мои</mat-checkbox>
-          <input type="text" placeholder="Автор" class="input__author">
-        </div>
-        <div class="dropdown__second__section">
-          <p class="sort">Сортировать по:</p>
-          <mat-form-field>
-            <mat-label>Дате</mat-label>
-            <mat-select disableRipple>
-              <mat-option value="1">1</mat-option>
-              <mat-option value="1">2</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-        <div class="dropdown__third__section">
-          <mat-checkbox class="checkbox__input picker" color="primary">я участник</mat-checkbox>
-          <mat-checkbox class="checkbox__input picker" color="primary" [checked]="true">в заголовке</mat-checkbox>
-          <mat-checkbox class="checkbox__input picker" color="primary">строгий поиск</mat-checkbox>
-        </div>
+        <app-input-dropdown></app-input-dropdown>
       </div>
     </div>
   </div>
-
-  <div class="header__profile">
-    <img class="mail__icon" src="../../assets/mail.png" title="Mail" alt="mail-icon">
-    <img class="notification__icon" src="../../assets/notification.png" title="Notofication" alt="notification-icon">
-    <span class="notification__quantity">18</span>
-    <img class="profile__avatar" src="../../assets/avatar.jpg" title="Avatar" alt="user-avatar">
-  </div>
-
+  <app-profile></app-profile>
 </header>

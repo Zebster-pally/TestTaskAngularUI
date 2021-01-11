@@ -57,24 +57,6 @@
   margin-left: 80px;
 }
 
-.navigation__button {
-  font-size: 16px;
-  color: #ffffff;
-  font-weight: 500;
-  font-family: "Roboto";
-  text-align: right;
-}
-
-.triangle {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 6px 5px 0 5px;
-  border-color: #ffffff transparent transparent transparent;
-  margin-left: 8px;
-}
-
 /* SEARCH */
 
 .header__search {
@@ -98,19 +80,48 @@
   height: 40px;
   border-radius: 2px 0 0 2px;
   border: 0;
-  left: 18%;
   background-image: url('../../assets/serach__input.png');
   background-repeat: no-repeat;
   background-position: center left;
   background-origin: content-box;
   text-indent: 30px;
   padding-left: 10px;
+  position: relative;
+  animation-name: openInput;
+  animation-duration: 0.3s;
 }
 
 .search__input:focus,
 .search__input:active {
   outline: none;
 }
+
+@keyframes openInput {
+  from {
+    width: 0;
+    margin-left: 754px;
+  }
+  to {
+    width: 669px;
+    margin-left: 85px;
+  }
+}
+
+// .close {
+//   animation-name: close;
+//   animation-duration: 0.5s;
+// }
+
+// @keyframes close {
+//   from {
+//     width: 669px;
+//     margin-left: 85px;
+//   }
+//   to {
+//     width: 0;
+//     margin-left: 754px;
+//   }
+// }
 
 .close__input {
   @include flexCenter();
@@ -140,59 +151,15 @@
   outline: none;
 }
 
-
-
-/* PROFILE */
-
-.header__profile {
-  @include flexCenter();
-}
-
-.mail__icon {
-  margin: 0 15px;
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-}
-
-.notification__icon {
-  margin: 0 15px;
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-}
-
-.notification__quantity {
-  position: relative;
-  right: 26px;
-  bottom: 9px;
-  width: 13px;
-  height: 13px;
-  border-radius: 1px;
-  filter: drop-shadow(0px 3px 1.5px rgba(0,0,0,0.37));
-  background-color: #b71826;
-  font-size: 10px;
-  text-align: center;
-  color: #ffffff;
-  font-weight: 400;
-  font-family: "Roboto";
-}
-
-.profile__avatar {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
 .search__wrapper {
-  display: flex
+  display: flex;
+  width: 884px;
+  position: relative;
 }
 
 .hide {
   display: none;
 }
-
 
 .search__dropdown {
   position: absolute;
@@ -203,50 +170,6 @@
   filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.25));
   background-color: #ffffff;
   padding: 18px 22px;
-}
-
-.dropdown__first__section {
-  @include flexCenter();
-  justify-content: space-between;
-}
-
-.checkbox__input {
-  font-size: 12px;
-  line-height: 40px;
-  color: #212121;
-  font-weight: 400;
-  font-family: "Roboto";
-}
-
-.input__author {
-  width: 313px;
-  height: 37px;
-  border-radius: 2px;
-  background-color: #ffffff;
-  border: 1px solid #c4ced5;
-  text-indent: 10px;
-}
-
-.dropdown__second__section {
-  @include flexCenter();
-}
-
-.sort {
-  font-size: 12px;
-  line-height: 40px;
-  color: #212121;
-  font-weight: 400;
-  font-family: "Roboto";
-  margin-right: 25px;
-}
-
-.dropdown__third__section {
-  @include flexCenter();
-  padding-bottom: 5px;
-}
-
-.picker {
-  margin-right: 31px;
 }
 
 .burger__menu {
@@ -261,10 +184,6 @@
     width: 500px;
   }
 
-  .navigation__button {
-    font-size: 14px;
-  }
-
   .logo__title {
     font-size: 19px;
   }
@@ -273,30 +192,27 @@
     padding-top: 16px;
   }
 
-  .triangle {
-    margin-left: 2px;
-    border-width: 4px 3px 0 3px;
-  }
-
   .search__dropdown {
     left: 207px;
-  }
-
-  .search__input {
-    margin-left: 45px;
-    width: 469px;
   }
 
   .search__icon {
     margin: 0 10px 0 30px;
   }
 
-  .mail__icon {
-    margin: 0 13px;
+  .search__input {
+    width: 429px;
   }
 
-  .notification__icon {
-    margin: 0 13px;
+  @keyframes openInput {
+    from {
+      width: 0;
+      margin-left: 754px;
+    }
+    to {
+      width: 429px;
+      margin-left: 85px;
+    }
   }
 }
 
@@ -328,18 +244,6 @@
     display: block;
   }
 
-  .mail__icon {
-    margin: 0 200px 0 13px;
-  }
-
-  .profile__avatar {
-    margin-left: 200px;
-  }
-
-  .header__profile {
-    padding-bottom: 12px;
-  }
-
   .mat-icon.mat-warn {
     color: #ffffff;
   }
@@ -367,8 +271,15 @@
     margin: 0 2.5%;
   }
 
-  .input__author {
-    width: 90%;
+  @keyframes openInput {
+    from {
+      width: 0;
+      margin-left: 90%;
+    }
+    to {
+      width: 100%;
+      margin-left: 0;
+    }
   }
 }
 
@@ -393,26 +304,9 @@
     height: 253px;
   }
 
-  .dropdown__third__section {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .input__author {
-    width: 280px;
-  }
-
   .search__input {
     width: 95%;
     margin-left: 0;
-  }
-
-  .mail__icon {
-    margin: 0 100px 0 13px;
-  }
-
-  .profile__avatar {
-    margin-left: 100px;
   }
 }
 
